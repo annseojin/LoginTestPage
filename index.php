@@ -15,10 +15,17 @@ if(!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="utf-8">
     <title>Welcome</title>
+    <script>
+        function confirmLogout() {
+            if (confirm("정말 로그아웃 하시겠습니까?")) {
+                location.href = 'logout.php'; // 로그아웃 페이지로 이동
+            }
+        }
+    </script>
 </head>
 <body>
   <div class="base">
     <h2><?php echo "HI, $username!!";?></h2>
-    <button type="button" class="btn" onclick="location.href='login.php'">LOGOUT</button>
+    <button type="button" class="btn" onclick="confirmLogout()">LOGOUT</button>
   </div>
 </body>
